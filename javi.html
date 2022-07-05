@@ -5,36 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .blanco{
+            
+            background-color: white; 
+            width: 20px;
+            height: 20px;
+            border: 2pt solid black;
+        }
+    </style>
 </head>
 <body>
-    
-        <div>
-            Ingrese el nombre del estudiante: <input type="text" id="nombre">
-        <br>
-        Ingrese el celular del estudiane: <input type="text" id="celular">
-        </div>
-        <div id="tabla">
-            
-
-                
-            </table>
-        </div>
-        <script lang="javaScript">
-            var x = 0;
-            function table(){
-                var nombre = document.getElementById("nombre").value;
-                var cel = document.getElementById("celular").value;
-                if(x==0){
-                    var newHtml = "<table><tr><th>Nombre</th><th>Celular</th></tr><tr><td>"+nombre+"</td><td>"+cel+"</td></tr></table>";
-                    x++;
-                }else{
-                    var newHtml = "<table><tr><td>"+nombre+"</td><td>"+cel+"</td></tr></table>";
-                }
-                
-                document.getElementById("tabla").innerHTML += newHtml;    
+    <div id="cuadro" class="blanco"></div>
+    <input id="btnTurn" type="button" value="Turn off" onclick="changeState(this);">
+    <div>
+        <h1 style="display:inline;">Likes: </h1>
+        <h2 id="likes" style="display:inline;">0</h2>
+        <input type="button" value="Incrementar" onclick="incrementar();">
+        <script>
+            function incrementar(){
+                const newHTML = "<h1>Eres un usuario premium</h1><ul><li>Basic</li><li>Advanced</li></ul>"
+                var y = document.getElementById("likes").innerText
+                y++
+                document.getElementById("likes").innerText = y
+                if(y==10)
+                document.getElementById("premium").innerHTML = newHTML
             }
         </script>
-        <button onclick="table()">Enviar</button>
- 
+        <div id="premium">
+
+        </div>
+    </div>
+    
+    <script>
+        function changeState(element){
+            if(element.value == "Turn off"){
+                element.value = "Turn on"
+                document.getElementById("cuadro").style.backgroundColor="yellow"
+
+            }
+            else{
+                element.value = "Turn off"
+                document.getElementById("cuadro").style.backgroundColor="white"
+            }  
+        }
+    </script>
 </body>
 </html>
