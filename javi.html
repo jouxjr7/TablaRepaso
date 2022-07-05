@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <div>
+            Ingrese el nombre del estudiante: <input type="text" id="nombre">
+        <br>
+        Ingrese el celular del estudiane: <input type="text" id="celular">
+        </div>
+        <div id="tabla">
+            
+
+                
+            </table>
+        </div>
+        <script lang="javaScript">
+            var x = 0;
+            function table(){
+                var nombre = document.getElementById("nombre").value;
+                var cel = document.getElementById("celular").value;
+                if(x==0){
+                    var newHtml = "<table><tr><th>Nombre</th><th>Celular</th></tr><tr><td>"+nombre+"</td><td>"+cel+"</td></tr></table>";
+                    x++;
+                }else{
+                    var newHtml = "<table><tr><td>"+nombre+"</td><td>"+cel+"</td></tr></table>";
+                }
+                
+                document.getElementById("tabla").innerHTML += newHtml;    
+            }
+        </script>
+        <button onclick="table()">Enviar</button>
+ 
+</body>
+</html>

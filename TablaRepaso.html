@@ -3,40 +3,32 @@
 <head>
     <link rel="stylesheet" type="text/css"
     href="TablaRepaso.css"/>
+    <script src="TablaRepaso.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <table class="tabla-materiales">
+    
+    <div>
+        <p>Nombre: <input type="text" id="nombre" size="40"></p>
+        <p>Apellido: <input type="text" id="apellido" size="40"></p>
+        <p>Materia: <input type="text" id="materia" size="40"></p>
+        <button onclick="agregar()">Agregar a tabla </button>
+        <button onclick="borrar()">Borrar todo </button>
+    </div>
+    
+    <div id=tabla>
+      <table class="tabla-materiales">
         <thead>
-          <th>Codigo</th>
-          <th>Material</th>
-          <th>Cantidad</th>
-          <th>Magnitud</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Materia</th>
         </thead>
-        <tbody>
-          <tr>
-            <td class="codigo">1</td>
-            <td class="material">Ladrillo Común</td>
-            <td class="cantidad">50</td>
-            <td class="magnitud">un</td>
-          </tr>
-          <tr>
-            <td class="codigo">2</td>
-            <td class="material">Arena Lavada</td>
-            <td class="cantidad">2</td>
-            <td class="magnitud">m3</td>
-          </tr>
-          <tr>
-            <td class="codigo">3</td>
-            <td class="material">Murokal de 5 Lts</td>
-            <td class="cantidad">1</td>
-            <td class="magnitud">un</td>
-          </tr>
+        <tbody id="contenido">
         </tbody>
       </table>
-    
+    </div>
 </body>
 </html>
